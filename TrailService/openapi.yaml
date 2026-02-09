@@ -1,0 +1,223 @@
+openapi: 3.0.0
+info:
+  title: TrailService
+  description: COMP2001 Trail CRUD API
+  version: "1.0"
+
+servers:
+  - url: http://localhost:8000
+
+paths:
+  /trails:
+    get:
+      summary: Get all trails
+      operationId: trail_api.get_trails
+      responses:
+        "200":
+          description: List of trails
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Trail_Number:
+                      type: string
+                    Trail_Name:
+                      type: string
+                    Distance_km:
+                      type: number
+                    Duration_hr:
+                      type: number
+                    Difficulty:
+                      type: string
+                    Elevation_gain_m:
+                      type: integer
+                    Route_Type:
+                      type: string
+                    Location_Number:
+                      type: string
+        "500":
+          description: Database error
+
+    post:
+      summary: Create new trail
+      operationId: trail_api.create_trail
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - Trail_Name
+                - Distance_km
+                - Duration_hr
+                - Location_Number
+                - email
+                - password
+              properties:
+                Trail_Number:
+                  type: string
+                  example: T0155
+                Trail_Name:
+                  type: string
+                  example: Raven Crag
+                Distance_km:
+                  type: number
+                  example: 1.9
+                Duration_hr:
+                  type: number
+                  example: 1.5
+                Difficulty:
+                  type: string
+                  example: Moderate
+                Elevation_gain_m:
+                  type: integer
+                  example: 226
+                Route_Type:
+                  type: string
+                  example: out & back
+                Location_Number:
+                  type: string
+                  example: L001
+                email:
+                  type: string
+                  example: grace@plymouth.ac.uk
+                password:
+                  type: string
+                  example: ISAD123!
+      responses:
+        "201":
+          description: Trail created successfully
+        "401":
+          description: Authentication failed
+        "500":
+          description: Database error
+
+  /trails/{Trail_Number}:
+    parameters:
+      - name: Trail_Number
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Trail ID (e.g. T0001)
+
+    get:
+      summary: Get single trail
+      operationId: trail_api.get_trail
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Trail_Number:
+                    type: string
+                  Trail_Name:
+                    type: string
+                  Distance_km:
+                    type: number
+                  Duration_hr:
+                    type: number
+                  Difficulty:
+                    type: string
+                  Elevation_gain_m:
+                    type: integer
+                  Route_Type:
+                    type: string
+                  Location_Number:
+                    type: string
+        "404":
+          description: Trail not found
+        "500":
+          description: Database error
+
+    put:
+      summary: Update trail
+      operationId: trail_api.update_trail
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - Trail_Name
+                - Distance_km
+                - Duration_hr
+                - Location_Number
+                - email
+                - password
+              properties:
+                Trail_Number:
+                  type: string
+                  example: T0155
+                Trail_Name:
+                  type: string
+                  example: Buttermere Circular
+                Distance_km:
+                  type: number
+                  example: 7.4
+                Duration_hr:
+                  type: number
+                  example: 2.5
+                Difficulty:
+                  type: string
+                  example: Easy
+                Elevation_gain_m:
+                  type: integer
+                  example: 117
+                Route_Type:
+                  type: string
+                  example: Loop
+                Location_Number:
+                  type: string
+                  example: L002
+                email:
+                  type: string
+                  example: grace@plymouth.ac.uk
+                password:
+                  type: string
+                  example: ISAD123!
+      responses:
+        "200":
+          description: Trail updated successfully
+        "401":
+          description: Authentication failed
+        "403":
+          description: Not owner or admin
+        "500":
+          description: Database error
+
+    delete:
+      summary: Delete trail
+      operationId: trail_api.delete_trail
+      parameters:
+        - name: email
+          in: query
+          required: false
+          schema:
+            type: string
+          example: grace@plymouth.ac.uk
+        - name: password
+          in: query
+          required: false
+          schema:
+            type: string
+          example: ISAD123!
+      responses:
+        "200":
+          description: Trail deleted successfully
+        "401":
+          description: Authentication failed
+        "403":
+          description: Not owner or admin
+        "404":
+          description: Trail not found
+        "500":
+          description: Access denied - not owner
