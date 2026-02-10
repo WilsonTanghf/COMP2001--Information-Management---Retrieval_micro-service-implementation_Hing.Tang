@@ -20,18 +20,18 @@ This API provides full CRUD operations for hiking trails:
 **Python**: 3.11.4
 
 **Required packages** (exact versions):
-Flask==2.2.2
-connexion[swagger-ui]==2.14.1
-pyodbc==5.3.0
-requests==2.31.0
+Flask==2.2.2, 
+connexion[swagger-ui]==2.14.1, 
+pyodbc==5.3.0, 
+requests==2.31.0, 
 Database Driver: ODBC Driver 17 for SQL Server
 
 ## 2. Setup
 Step 1: **Install Dependencies**
-Install python,
-Install ODBC Driver,
-pip install Flask==2.2.2, 
-pip install connexion[swagger-ui]==2.14.1 pyodbc==5.3.0 requests==2.31.0,
+1. Install python
+2. Install ODBC Driver
+3. pip install Flask==2.2.2 
+4. pip install connexion[swagger-ui]==2.14.1 pyodbc==5.3.0 requests==2.31.0,
 
 Step 2: **Project Structure**
 TrailService/
