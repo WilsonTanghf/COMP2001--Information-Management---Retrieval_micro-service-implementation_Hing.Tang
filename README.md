@@ -20,11 +20,11 @@ This API provides full CRUD operations for hiking trails:
 **Python**: 3.11.4
 
 **Required packages** (exact versions):
-Flask==2.2.2, 
-connexion[swagger-ui]==2.14.1, 
-pyodbc==5.3.0, 
-requests==2.31.0, 
-Database Driver: ODBC Driver 17 for SQL Server
+1. Flask==2.2.2, 
+2. connexion[swagger-ui]==2.14.1, 
+3. pyodbc==5.3.0, 
+4. requests==2.31.0, 
+5. Database Driver: ODBC Driver 17 for SQL Server
 
 ## 2. Setup
 Step 1: **Install Dependencies**
@@ -35,9 +35,9 @@ Step 1: **Install Dependencies**
 
 Step 2: **Project Structure**
 TrailService/
-── app.py          (Connexion app entry point),
-── openapi.yaml    (OpenAPI 3.0 specification),
-── trail_api.py    (API handler functions),
+├── app.py          (Connexion app entry point)
+├── openapi.yaml    (OpenAPI 3.0 specification)
+└── trail_api.py    (API handler functions)
 
 Step 3: **Run API**
 1. cd TrailService (in this case)
