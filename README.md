@@ -28,20 +28,20 @@ Database Driver: ODBC Driver 17 for SQL Server
 
 ## 2. Setup
 Step 1: **Install Dependencies**
-Install python
-Install ODBC Driver
-pip install Flask==2.2.2 
-pip install connexion[swagger-ui]==2.14.1 pyodbc==5.3.0 requests==2.31.0
+Install python,
+Install ODBC Driver,
+pip install Flask==2.2.2, 
+pip install connexion[swagger-ui]==2.14.1 pyodbc==5.3.0 requests==2.31.0,
 
 Step 2: **Project Structure**
 TrailService/
-├── app.py          (Connexion app entry point)
-├── openapi.yaml    (OpenAPI 3.0 specification)
-└── trail_api.py    (API handler functions)
+── app.py          (Connexion app entry point),
+── openapi.yaml    (OpenAPI 3.0 specification),
+── trail_api.py    (API handler functions),
 
 Step 3: **Run API**
-cd TrailService (in this case)
-python app.py
+1. cd TrailService (in this case)
+2. python app.py
 
 ## 3. Access Points
 Swagger UI (interactive docs): http://localhost:8000/ui
