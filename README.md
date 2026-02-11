@@ -59,6 +59,7 @@ Swagger UI (interactive docs): http://localhost:8000/ui
 4.2 **POST /trails - Create new trail**
 
 Example JSON:
+```json
 {
   "Trail_Number": "T0155",
   "Trail_Name": "Raven Crag",
@@ -71,6 +72,7 @@ Example JSON:
   "email": "grace@plymouth.ac.uk",
   "password": "ISAD123!"
 }
+```
 
 1. Click "Try it out"
 2. Click "Execute"
@@ -86,6 +88,7 @@ Example JSON:
 4.4 **PUT /trails/{Trail_Number} - Update trail**
 
 Example JSON (Valid owner):
+```json
 {
   "Trail_Number": "T0155",
   "Trail_Name": "Buttermere Circular",
@@ -98,16 +101,19 @@ Example JSON (Valid owner):
   "email": "grace@plymouth.ac.uk",
   "password": "ISAD123!"
 }
+```
 
 1. Click "Try it out"
 2. Enter Trail_Number: T0155"
 3. Execute → 200: "Trail updated"
 
 **Test Access Denied (Wrong credentials):**
+```json
 {
   "email": "timgplysouth.ac.uk",
   "password": "COMP2001!"
 }
+```
 
 Result: 500 - "Access denied"
 
