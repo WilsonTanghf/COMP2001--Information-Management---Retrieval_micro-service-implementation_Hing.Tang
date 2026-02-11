@@ -3,7 +3,7 @@
 **COMP2001HK Information Management and Retrieval - Assessment 2**  
 Trail CRUD API for managing hiking trail data. Built with Flask + Connexion + SQL Server.
 
-## What You Can Do
+## API Functionality
 
 This API provides full CRUD operations for hiking trails:
 
