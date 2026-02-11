@@ -34,10 +34,12 @@ Step 1: **Install Dependencies**
 4. pip install connexion[swagger-ui]==2.14.1 pyodbc==5.3.0 requests==2.31.0,
 
 Step 2: **Project Structure**
+```
 TrailService/
 ├── app.py          (Connexion app entry point)
 ├── openapi.yaml    (OpenAPI 3.0 specification)
 └── trail_api.py    (API handler functions)
+```
 
 Step 3: **Run API**
 1. cd TrailService (in this case)
